@@ -42,7 +42,8 @@ return {
       -- "pyright"
       "lua_ls",
       "luau_lsp",
-      "clangd"
+      "clangd",
+      "rust_analyzer"
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
