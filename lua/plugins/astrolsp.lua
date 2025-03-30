@@ -38,13 +38,10 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {
-      -- "pyright"
-      "lua_ls",
-      "luau_lsp",
-      "clangd",
-      "rust_analyzer"
-    },
+    servers = (function()
+      local termux = require("termux")
+      return termux.PreLspServers()
+    end)(),
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
