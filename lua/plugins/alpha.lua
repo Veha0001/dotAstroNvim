@@ -4,7 +4,7 @@ return {
   enabled = true,
   init = false,
   opts = function()
-    local dashboard = require("alpha.themes.dashboard")  
+    local dashboard = require("alpha.themes.dashboard")
     local logo = [[
 ⠄⠄⠄⠄⠄⠄⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣜⠿⠿⣿⣿⣧⢓
 ⠄⠄⠄⠄⠄⡠⢛⣿⣿⣿⡟⣿⣿⣽⣋⠻⢻⣿⣿⣿⣿⡻⣧⡠⣭⣭⣿⡧
@@ -21,9 +21,9 @@ Ayo⠄⠄⠄⠄⠄⠄⣼⠁⣤⣭⣭⡌⢁⣼⣿⣿⣿⢹⡇⣭⣤⣶⣤⡝⡼
     --[[
     local logo = [[
          ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
-         ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
-         ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
-         ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
+         ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z
+         ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z
+         ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z
          ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║
          ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝
     ]]
@@ -40,12 +40,14 @@ Ayo⠄⠄⠄⠄⠄⠄⣼⠁⣤⣭⣭⡌⢁⣼⣿⣿⣿⢹⡇⣭⣤⣶⣤⡝⡼
       dashboard.button("LDR f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
       dashboard.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
       -- Lazy Buttons
-      dashboard.button("c", " " .. " Config", "<cmd> lua require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })<CR>"),
+      dashboard.button("c", " " .. " Config",
+        "<cmd> lua require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })<CR>"),
       dashboard.button("l", "󰒲 " .. " Lazy", "<cmd> Lazy <cr>"),
       dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
     }
     if is_linux then
-        table.insert(dashboard.section.buttons.val, 7, dashboard.button("e", "󰁨 " .. " Fix Shebang", "<cmd>lua require('termux').MasonFixShebang()<CR>"))
+      table.insert(dashboard.section.buttons.val, 7,
+        dashboard.button("e", "󰁨 " .. " Fix Shebang", "<cmd>lua require('termux').MasonFixShebang()<CR>"))
     end
     for _, button in ipairs(dashboard.section.buttons.val) do
       button.opts.hl = "AlphaButtons"
@@ -88,12 +90,12 @@ Ayo⠄⠄⠄⠄⠄⠄⣼⠁⣤⣭⣭⡌⢁⣼⣿⣿⣿⢹⡇⣭⣤⣶⣤⡝⡼
         local stats = require("lazy").stats()
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
         dashboard.section.footer.val = "󰄛  Neovim loaded "
-          .. stats.loaded
-          .. "/"
-          .. stats.count
-          .. " plugins in "
-          .. ms
-          .. "ms"
+            .. stats.loaded
+            .. "/"
+            .. stats.count
+            .. " plugins in "
+            .. ms
+            .. "ms"
         pcall(vim.cmd.AlphaRedraw)
       end,
     })
