@@ -42,16 +42,20 @@ function M.MasonFixShebang()
 end
 
 -- Function to return a list of LSP servers when running on Android
-function M.PreLspServers()
+function M.PreLspServers(servers_list)
   if vim.fn.has("android") == 1 then
     return {
+      "jqls",
+      "texlab",
+      "helm_ls",
       "lua_ls",
       "luau_lsp",
       "clangd",
-      "rust_analyzer"
+      "rust_analyzer",
+      "intelephense"
     }
   else
-    return {}
+    return servers_list or {}
   end
 end
 
