@@ -2,7 +2,10 @@
 
 <!--**NOTE:** This is for AstroNvim v4+-->
 
-My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC. 
+My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC.
+> [!NOTE]
+> This is for AstroNvim v4+
+> Update to AstroNvim v5+ has some problems, i can’t fix yet.
 
 ## 🛠️ Installation
 

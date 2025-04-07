@@ -1,3 +1,5 @@
+# The AstroNvim Template
+template
 # Compiled Lua sources
 luac.out
 lazy-lock.json
