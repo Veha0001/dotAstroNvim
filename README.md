@@ -3,7 +3,13 @@
 <!--**NOTE:** This is for AstroNvim v4+-->
 
 My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC. 
-![Previews](preview.jpg)
+
+**Images**
+
+<img src="media/preview.jpg" width="120" >
+<img src="media/preview2.jpg" width="120" >
+<img src="media/preview3.jpg" width="120" >
+
 ## 🛠️ Installation
 
 #### Make a backup of your current nvim and shared folder
