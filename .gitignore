@@ -5,7 +5,7 @@ luac.out
 lazy-lock.json
 neovim.yml
 selene.toml
-lua/player
+lua/custom
 # luarocks build files
 *.src.rock
 *.zip
