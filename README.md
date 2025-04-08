@@ -1,14 +1,14 @@
-# DotAstroNvim
+# dotAstroNvim
 
-<!--**NOTE:** This is for AstroNvim v4+-->
+<!--**NOTE:** This is for AstroNvim v5+-->
 
 My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC.
 > [!NOTE]
-> This is for AstroNvim v4+ for nvim `v0.10^`.
+> Updated to AstroNvim v5+ and Neovim v0.10+latest.
 >
-> Update to AstroNvim v5+ is unstable right now.
+> This template has some patches fixes for Termux and some other features.
 
-## 🛠️ Installation
+### 🛠️ Installation
 
 #### Make a backup of your current nvim and shared folder
 
@@ -19,7 +19,7 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-### Install Required Packages 
+#### Install Required Packages 
 
 Run the following command to install the necessary packages in Termux:
 
@@ -33,20 +33,21 @@ apt install termux-api python neovim git nodejs-lts fd ripgrep ruff stylua luaro
 ### Termux clipboards
 
 For get clipboards from vim to the device.
-
-> Install packages: `apt install termux-api`.
-> Then install Termux:API app from **Github** or **F-Dorid**.
+> [!TIP]
+> You need to install **Termux:API** for Termux. 
+> You can install it from the Play Store, Github or F-Droid.
+> Then Install packages: `apt install termux-api`.
 
 > [!NOTE]
 > No need to install **Termux:API** for **Termux Play Store**.
 
-## Clone the repository
+### Clone the repository
 **UNIX/LINUX**
 ```bash
 git clone https://github.com/Veha0001/dotAstroNvim ~/.config/nvim
 ```
 **WINDOWS**
-```cmd
+```shell
 git clone https://github.com/Veha0001/dotAstroNvim $ENV:LOCALAPPDATA/nvim
 ```
-then start `nvim`.
+Then start `nvim`.
