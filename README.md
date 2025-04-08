@@ -4,8 +4,9 @@
 
 My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC.
 > [!NOTE]
-> This is for AstroNvim v4+
-> Update to AstroNvim v5+ has some problems, i can’t fix yet.
+> This is for AstroNvim v4+ for nvim `v0.10^`.
+>
+> Update to AstroNvim v5+ is unstable right now.
 
 ## 🛠️ Installation
 
@@ -48,3 +49,4 @@ git clone https://github.com/Veha0001/dotAstroNvim ~/.config/nvim
 ```cmd
 git clone https://github.com/Veha0001/dotAstroNvim $ENV:LOCALAPPDATA/nvim
 ```
+then start `nvim`.
