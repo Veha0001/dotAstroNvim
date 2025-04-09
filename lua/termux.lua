@@ -1,12 +1,29 @@
 local M = {}
 
+-- Use vim.uv safely (fallback if not available)
+local uv = vim.uv or vim.loop
+local termux_prefix = os.getenv("PREFIX") or "/data/data/com.termux/files/usr"
+
+-- Safely check if Termux prefix path exists
+local is_termux = false
+if uv and type(uv.fs_stat) == "function" then
+  local stat = uv.fs_stat(termux_prefix)
+  if stat and stat.type == "directory" then
+    is_termux = true
+  end
+end
+
+--- Return true if running in Termux on Android
+function M.IsTermux()
+  return is_termux and vim.fn.has("unix") == 1 and vim.fn.has("android") == 1
+end
+
 function M.MasonFixShebang()
-  if vim.fn.has("unix") == 0 or vim.fn.has("android") == 0 then
+  if not M.IsTermux() then
     vim.notify("This function is only for Termux on Android.", vim.log.levels.WARN)
     return
   end
 
-  local termux_prefix = os.getenv("TERMUX_PREFIX") or "/data/data/com.termux/files/usr"
   local mason_bin = vim.fn.expand("$HOME/.local/share/nvim/mason/bin")
   local files = vim.fn.globpath(mason_bin, "*", false, true)
 
@@ -31,7 +48,7 @@ function M.MasonFixShebang()
         if f then
           f:write(new_shebang .. "\n" .. rest)
           f:close()
-          table.insert(fixed, vim.fn.fnamemodify(filepath, ":t")) -- just filename
+          table.insert(fixed, vim.fn.fnamemodify(filepath, ":t"))
         end
       end
     end
@@ -50,8 +67,8 @@ function M.MasonFixShebang()
   end
 end
 
-function M.PreLspServers(servers_list)
-  if vim.fn.has("android") == 1 then
+function M.PreLspServersList(servers_list)
+  if M.IsTermux() then
     return {
       "jqls",
       "texlab",

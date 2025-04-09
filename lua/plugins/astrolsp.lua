@@ -1,4 +1,4 @@
---if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -38,21 +38,19 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = (function()
-      local termux = require("termux")
-      return termux.PreLspServers({
-        -- "pyright"
-      })
-    end)(),
+    servers = {
+      -- "pyright"
+    },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
+
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
@@ -66,7 +64,7 @@ return {
         -- condition will be resolved for each client on each execution and if it ever fails for all clients,
         -- the auto commands will be deleted for that buffer
         cond = "textDocument/codeLens",
-        --cond = function(client, bufnr) return client.name == "lua_ls" end,
+        -- cond = function(client, bufnr) return client.name == "lua_ls" end,
         -- list of auto commands to set
         {
           -- events to trigger
