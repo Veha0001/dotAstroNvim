@@ -1,7 +1,8 @@
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE\
 --
 -- You can add more plugins in the mods folder.
--- If you can explorer your lua files in the custom folder then try press I or H.
+-- If you want to explore your Lua files in the custom folder, try pressing I or H.
+-- NOTE: This file is not ignored by Git. Create a new one in the mods folder.
 --
 return {
   {
@@ -16,21 +17,11 @@ return {
       -- You can still add additional servers manually if needed
       vim.list_extend(opts.servers, {
         -- "clangd",
+        -- "taplo",
         -- "pyright",  -- Uncomment to add more servers
         -- add more servers as needed...
       })
     end,
   },
-  -- Example theme  
-  --[[
-  {
-    "AstroNvim/astroui",
-    ---@type AstroUIOpts
-    opts = {
-      -- change colorscheme
-      colorscheme = "catppuccin-latte"
-    }
-  }
-  --]]
 }
 

@@ -1,4 +1,4 @@
-# NvimAstron
+# dotAstroNvim
 
 <!--**NOTE:** This is for AstroNvim v5+-->
 
@@ -21,7 +21,9 @@ Run the following command to install the necessary packages in Termux:
 
 ```bash
 apt update && apt upgrade
-apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua luarocks lua-language-server fzf clang termux-tools lazygit gdu wget tectonic python-pynvim
+apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust -y
+apt install stylua luarocks lua-language-server fzf clang termux-tools -y
+apt install lazygit gdu wget tectonic python-pynvim -y
 ```
 
 [Get more details](https://docs.astronvim.com/)
@@ -29,23 +31,25 @@ apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua 
 > [!TIP]
 > Install [NerdFonts](https://nerdfonts.com) for best theme icons.
 >
-> To get clipboards to device, install [Termux:API]() for Termux. But not required for **Termux googleplay**.
+> To get clipboards to device,
+> install [Termux:API](https://f-droid.org/packages/com.termux.api).
+> But not required for **Termux googleplay**.
 
 ### Clone the repository
 
-**UNIX/LINUX**
+- Unix
 
 ```bash
-git clone https://github.com/Veha0001/omvAstron ~/.config/nvim
+git clone https://github.com/Veha0001/dotAstroNvim ~/.config/nvim
 ```
 
-**WINDOWS**
+- Windows
 
 ```shell
-git clone https://github.com/Veha0001/omvAstron $ENV:LOCALAPPDATA/nvim
+git clone https://github.com/Veha0001/dotAstroNvim $ENV:LOCALAPPDATA/nvim
 ```
 
-### Then you start nvim.
+### Then you start Nvim
 
 You will need a good network to clone a lot of plugins at the time.
 

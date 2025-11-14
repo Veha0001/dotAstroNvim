@@ -67,6 +67,7 @@ function M.PreLspServersList(servers_list)
       "jqls",
       "texlab",
       "ruff",
+      "taplo",
       "helm_ls",
       "lua_ls",
       "luau_lsp",

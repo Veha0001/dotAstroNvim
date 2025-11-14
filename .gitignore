@@ -1,5 +1,6 @@
 !lua/mods/main.lua
 lua/mods/*
+lua/mods/_*
 lazy-lock.json
 template
 
