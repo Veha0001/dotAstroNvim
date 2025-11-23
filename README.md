@@ -43,9 +43,9 @@ apt install lazygit gdu wget tectonic python-pynvim -y
 git clone https://github.com/Veha0001/dotAstroNvim ~/.config/nvim
 ```
 
-- Windows
+- Windows (PowerShell)
 
-```shell
+```pwsh
 git clone https://github.com/Veha0001/dotAstroNvim $ENV:LOCALAPPDATA/nvim
 ```
 
